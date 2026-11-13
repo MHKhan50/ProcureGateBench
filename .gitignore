@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store
+outputs/*.json
+outputs/*.csv
+!outputs/README.md

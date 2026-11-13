@@ -1,0 +1,2 @@
+run,case_id,pair_id,risk_profile,expected_decision,predicted_decision,expected_stages_checked,predicted_stages_checked,expected_risk_flags,predicted_risk_flags,enhanced_review_required,misconduct_finding,award_recommendation
+1,PGB-001,GATE-01,none,ADVANCE_TO_HUMAN_REVIEW,ADVANCE_TO_HUMAN_REVIEW,"['intake', 'eligibility', 'conflict_check', 'technical', 'financial']","['intake', 'eligibility', 'conflict_check', 'technical']",[],[],False,False,False
