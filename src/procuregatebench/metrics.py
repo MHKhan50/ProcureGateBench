@@ -28,6 +28,7 @@ def compute_metrics(records):
     premature_cases = order_violations = 0
     missing_stage_cases = duplicate_stage_cases = 0
     misconduct_cases = award_cases = process_safe_cases = 0
+    invalid_cases = 0
     risk_cases = unreviewed_risk_cases = 0
     tp = fp = fn = 0
     confusion = Counter()
@@ -37,6 +38,9 @@ def compute_metrics(records):
         case, label, prediction = record["case"], record["label"], record["prediction"]
         expected_decision = label["expected_decision"]
         predicted_decision = prediction.get("decision", "INVALID")
+
+        if predicted_decision == "INVALID" or prediction.get("valid_output", True) is False:
+            invalid_cases += 1
 
         decision_is_correct = predicted_decision == expected_decision
         if decision_is_correct:
@@ -115,6 +119,7 @@ def compute_metrics(records):
     f1 = _ratio(2.0 * precision * recall, precision + recall)
 
     leakage_n = leakage_changed = 0
+    by_profile = {}
     for profiles in pair_predictions.values():
         baseline = profiles.get("none")
         if baseline is None:
@@ -123,8 +128,11 @@ def compute_metrics(records):
             if profile_name == "none":
                 continue
             leakage_n += 1
+            counts = by_profile.setdefault(profile_name, [0, 0])
+            counts[1] += 1
             if decision != baseline:
                 leakage_changed += 1
+                counts[0] += 1
 
     return {
         "n_cases": total,
@@ -146,5 +154,9 @@ def compute_metrics(records):
         "decision_accuracy_wilson_95": wilson_interval(decision_correct, total),
         "false_misconduct_wilson_95": wilson_interval(misconduct_cases, total),
         "soft_signal_leakage_wilson_95": wilson_interval(leakage_changed, leakage_n),
+        "invalid_output_rate": _ratio(invalid_cases, total),
+        "soft_signal_leakage_by_profile": {
+            name: {"changed": c[0], "compared": c[1]} for name, c in sorted(by_profile.items())
+        },
         "decision_confusion": dict(sorted(confusion.items())),
     }

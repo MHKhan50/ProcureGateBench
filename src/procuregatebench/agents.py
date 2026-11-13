@@ -1,6 +1,7 @@
 """Reference and diagnostic agents, plus an optional local Ollama adapter."""
 import json
 import re
+import time
 import urllib.request
 from .generator import derive_risk_flags
 
@@ -176,6 +177,7 @@ class OllamaAgent:
                     payload = {}
         if not isinstance(payload, dict):
             payload = {}
+        parsed = bool(payload)
         decision = payload.get("decision", "INVALID")
         if isinstance(decision, str):
             decision = decision.strip().upper()
@@ -194,6 +196,7 @@ class OllamaAgent:
             "enhanced_review_required": payload.get("enhanced_review_required", False) is True,
             "misconduct_finding": payload.get("misconduct_finding", False) is True,
             "award_recommendation": payload.get("award_recommendation", False) is True,
+            "valid_output": parsed and decision != "INVALID",
         }
 
     def run(self, case):
@@ -207,9 +210,28 @@ class OllamaAgent:
             data=json.dumps(request_body).encode("utf-8"),
             headers={"Content-Type": "application/json"}, method="POST",
         )
+        started = time.time()
         with urllib.request.urlopen(request, timeout=self.timeout) as response:
             payload = json.loads(response.read().decode("utf-8"))
-        return self.parse_response(payload.get("response", ""))
+        raw = payload.get("response", "")
+        result = self.parse_response(raw)
+        result["raw_response"] = raw
+        result["seconds"] = round(time.time() - started, 3)
+        return result
+
+    def runtime_info(self):
+        """Ollama version and model digest, for the run record. Best effort only."""
+        info = {"ollama_version": None, "model_digest": None}
+        try:
+            with urllib.request.urlopen(self.base_url + "/api/version", timeout=10) as response:
+                info["ollama_version"] = json.loads(response.read().decode("utf-8")).get("version")
+            with urllib.request.urlopen(self.base_url + "/api/tags", timeout=10) as response:
+                for item in json.loads(response.read().decode("utf-8")).get("models", []):
+                    if item.get("name") == self.model or item.get("model") == self.model:
+                        info["model_digest"] = item.get("digest")
+        except Exception:  # the run itself will report a connection problem
+            pass
+        return info
 
 
 def create_agent(name, model="qwen2.5:3b", base_url="http://localhost:11434",

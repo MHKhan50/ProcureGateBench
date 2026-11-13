@@ -2,8 +2,10 @@
 
 ## 0.1.0 — 2026-11-13
 
-- Initial research prototype.
-- Added 96 paired synthetic procurement triage cases.
-- Added process-gate, soft-risk, and counterfactual leakage metrics.
-- Added transparent rule, flat-checklist, and intentionally unsafe risk-only baselines.
-- Added optional local Ollama adapter and unit tests.
+- 96 paired synthetic pre-award procurement cases (16 hard-gate profiles x 6 soft-risk profiles).
+- Process-gate, soft-risk, counterfactual-leakage, missing-stage and invalid-output metrics.
+- Rule, flat-checklist and intentionally unsafe risk-only baselines.
+- Local Ollama adapter with JSON-schema output, full and compact prompts.
+- Resumable model runs: every call and raw reply is saved to `calls.jsonl`.
+- `scripts/run_all.sh` for the full study and `scripts/analysis.py` with cluster-bootstrap intervals over the 16 hard-gate groups, paired prompt comparisons and charts.
+- References checked against publisher, journal, arXiv and government pages on 13 November 2026.

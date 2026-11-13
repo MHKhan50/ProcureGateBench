@@ -10,3 +10,6 @@
 8. **Local model constraints:** results depend on model tag, Ollama version, prompt, decoding settings, and hardware. Small local models may produce invalid or inconsistent JSON.
 9. **No expert validation yet:** procurement practitioners and legal specialists have not reviewed the cases or policy profile.
 10. **No real-world deployment evidence:** this benchmark cannot establish that an agent is safe or effective in a live procurement system.
+11. **Structured inputs:** the hard-gate facts are given as explicit fields (`eligibility_status: fail`), so the benchmark tests whether a model follows a stated policy, not whether it can find those facts in long tender documents.
+12. **Two small local models:** results describe `qwen2.5:3b` and `llama3.1:8b` under one harness and two prompts. They do not describe larger or hosted models.
+13. **Greedy decoding:** temperature 0 makes repeats nearly identical, so the repeat spread understates the variation a sampled deployment would show.

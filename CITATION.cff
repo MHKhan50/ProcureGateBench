@@ -1,9 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this benchmark, please cite it."
 title: "ProcureGateBench: Process-Gate Compliance and Red-Flag Calibration for Agentic Public Procurement Triage"
 version: 0.1.0
 date-released: 2026-11-13
 authors:
   - family-names: Hussain
     given-names: Muzammal
+    orcid: "https://orcid.org/0009-0001-2570-5686"
 license: MIT
+repository-code: "https://github.com/MHKhan50/ProcureGateBench"
+keywords:
+  - public procurement
+  - AI agents
+  - benchmark
+  - process compliance
+  - integrity red flags

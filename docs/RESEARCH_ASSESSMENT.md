@@ -7,7 +7,7 @@
 
 Public procurement allocates public money to goods, services, and works. The OECD's *Anti-Corruption and Integrity Outlook 2026* describes integrity risks across pre-tendering, tendering, and post-award stages. It notes that indicators such as single bidding, non-competitive procedures, and contract modifications can reflect several causes, including market structure and administrative capacity. The OECD explicitly cautions that indicators should be contextualised and used to trigger further investigation rather than treated as conclusive proof.
 
-The OECD reports that, among 40 responding countries, 8% used AI to identify, analyse, and monitor procurement-integrity risks, while data analytics was more common. The report also describes established red-flag systems and risk checklists. This supports a genuine governance problem: automated triage must not collapse an indicator into a finding or bypass the process that authorises the next step.
+The OECD reports that 8% (3 of 40) of responding countries used AI to identify, analyse, and monitor procurement-integrity risks, while data analytics was more common. The report also describes established red-flag systems and risk checklists. This supports a genuine governance problem: automated triage must not collapse an indicator into a finding or bypass the process that authorises the next step.
 
 ## 2. Existing approaches and adjacent work
 
@@ -15,11 +15,10 @@ The OECD reports that, among 40 responding countries, 8% used AI to identify, an
 |---|---|---|
 | OECD procurement-integrity guidance and red-flag systems | Risk indicators, checklists, monitoring, and escalation to investigators | Supplies governance context; it is not an agent benchmark with paired counterfactual process-gate tests |
 | OECD 2025 bid-rigging detection guidance | Bid/pricing patterns and suspicious conduct; cautions that indicators are not proof | Informs the soft-signal distinction; it does not evaluate ordered agent gate execution |
-| ProcureBench (TenderGate, updated September 2026) | Requirements extraction, bid analysis, and market research on one municipal school-renovation tender, in English and Latvian | Adjacent procurement-agent benchmark, but its published activity rubric is not the matched hard-gate/soft-signal counterfactual tested here |
 | Hendrata et al. (2026) | LLM agent interprets process-mining outputs and tender performance statistics | Adjacent process-mining interpretation; not the same as enforcing stop/hold/advance gates in synthetic case triage |
 | Schmid & Willems (2026) | Supervised ML predicts public servants' susceptibility to corruption using a large cross-country survey | Adjacent public-integrity prediction; different unit of analysis and not an agentic procurement workflow benchmark |
-| Rystrøm et al. (2026 preprint) | Argues that public-sector agent benchmarks need process-based, realistic, public-sector-specific tasks and relevant metrics; analyses more than 1,300 benchmark papers | Motivates process-specific evaluation, but is not a procurement triage benchmark |
-| User's existing agent portfolio | Tool policy, uncertainty/abstention, audit/provenance, memory, cancellation, retry, recovery, pagination, decomposition, and related reliability benchmarks | ProcureGateBench is scoped to public-procurement workflow legitimacy: ordered administrative gates and the non-probative status of integrity indicators |
+| Rystrøm et al. (2026, IASEAI) | Argues that public-sector agent benchmarks need process-based, realistic, public-sector-specific tasks and relevant metrics; analyses more than 1,300 benchmark papers | Motivates process-specific evaluation, but is not a procurement triage benchmark |
+| Author's earlier agent benchmarks | Tool policy, uncertainty/abstention, audit/provenance, memory, cancellation, retry, recovery, pagination, decomposition, and related reliability benchmarks | ProcureGateBench is scoped to public-procurement workflow legitimacy: ordered administrative gates and the non-probative status of integrity indicators |
 
 ## 3. Candidate research gap
 

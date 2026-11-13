@@ -8,7 +8,6 @@ The data are JSON Lines (`.jsonl`), one JSON object per line.
 |---|---|---|
 | `case_id` | string | Unique case identifier |
 | `pair_id` | string | Hard-gate profile shared by six counterfactual variants |
-| `risk_profile` | string | `none`, one-indicator profile, or `compound` |
 | `procurement_stage` | string | Fixed to `pre_award` |
 | `sector` | string | Synthetic procurement sector label |
 | `documents_complete` | boolean | Whether mandatory intake documents are complete |

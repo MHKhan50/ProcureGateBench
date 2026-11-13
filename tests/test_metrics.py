@@ -64,5 +64,22 @@ class MetricsTests(unittest.TestCase):
         self.assertLess(metrics["process_safe_rate"], 1.0)
 
 
+    def test_invalid_output_and_leakage_by_profile(self):
+        from procuregatebench.agents import RiskTriggeredBlockAgent
+        from procuregatebench.generator import build_dataset
+        from procuregatebench.metrics import compute_metrics
+        cases, labels = build_dataset()
+        agent = RiskTriggeredBlockAgent()
+        records = [{"case": c, "label": l, "prediction": agent.run(c)} for c, l in zip(cases, labels)]
+        records[0]["prediction"] = {"decision": "INVALID", "stages_checked": [], "risk_flags": [],
+                                    "valid_output": False}
+        metrics = compute_metrics(records)
+        self.assertAlmostEqual(metrics["invalid_output_rate"], 1 / 96)
+        by_profile = metrics["soft_signal_leakage_by_profile"]
+        self.assertEqual(set(by_profile), {"single_bidder", "short_tender_period", "repeat_awards",
+                                           "restrictive_specification", "compound"})
+        self.assertTrue(all(v["compared"] == 16 for v in by_profile.values()))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -15,7 +15,7 @@ General agent benchmarks may not capture the process obligations of public admin
 
 ## 2. Related work and research gap
 
-The OECD provides procurement-integrity indicators and guidance on bid-rigging detection. Existing digital systems include red-flag checklists and data-driven risk assessment. ProcureBench evaluates procurement requirements extraction, bid analysis, and market research. Recent work also applies process mining and LLM agents to interpret tender-performance outputs.
+The OECD provides procurement-integrity indicators and guidance on bid-rigging detection. Existing digital systems include red-flag checklists and data-driven risk assessment. Recent work also applies process mining and LLM agents to interpret tender-performance outputs.
 
 ProcureGateBench does not claim these areas are unstudied. Its candidate contribution is a paired counterfactual design that holds process-gate facts constant while changing only soft-risk indicators, then measures whether the agent's core process decision improperly changes. A targeted literature scan is documented in `docs/RESEARCH_ASSESSMENT.md`.
 

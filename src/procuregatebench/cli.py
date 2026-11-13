@@ -25,11 +25,19 @@ def main(argv=None):
     root = Path(__file__).resolve().parents[2]
     cases_path = Path(args.cases) if args.cases else root / "data" / "scenarios.jsonl"
     labels_path = Path(args.labels) if args.labels else root / "data" / "labels.jsonl"
-    output_dir = Path(args.output_dir) if args.output_dir else root / "outputs" / args.agent
+    if args.output_dir:
+        output_dir = Path(args.output_dir)
+    elif args.agent == "ollama":
+        safe_model = args.model.replace(":", "-").replace("/", "-")
+        output_dir = root / "outputs" / "llm" / "{0}_{1}".format(safe_model, args.prompt_profile)
+    else:
+        output_dir = root / "outputs" / args.agent
+    cache_path = output_dir / "calls.jsonl" if args.agent == "ollama" else None
     result = run_experiment(
         agent_name=args.agent, cases_path=cases_path, labels_path=labels_path,
         model=args.model, base_url=args.base_url, prompt_profile=args.prompt_profile,
         seed=args.seed, temperature=args.temperature, repeats=args.repeats, limit=args.limit,
+        cache_path=cache_path, progress=True,
     )
     summary_path, csv_path = write_outputs(result, output_dir)
     print("Agent: {0}".format(args.agent))
