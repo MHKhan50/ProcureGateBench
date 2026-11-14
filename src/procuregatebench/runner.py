@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 from . import __version__
-from .agents import create_agent
+from .agents import MAX_OUTPUT_TOKENS, create_agent
 from .metrics import compute_metrics
 
 MODEL_FIELDS = ("decision", "stages_checked", "risk_flags", "enhanced_review_required",
@@ -106,7 +106,8 @@ def run_experiment(agent_name, cases_path, labels_path, model="qwen2.5:3b",
     cache = None
     if is_model and cache_path is not None:
         cache = CallCache(cache_path, {"model": model, "prompt_profile": prompt_profile,
-                                       "temperature": temperature, "base_seed": seed})
+                                       "temperature": temperature, "base_seed": seed,
+                                       "max_output_tokens": MAX_OUTPUT_TOKENS})
     runtime = {}
     all_run_metrics, all_predictions = [], []
     total_calls, done_calls, timed = repeats * len(records), 0, []

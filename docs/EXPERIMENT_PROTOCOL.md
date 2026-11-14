@@ -7,7 +7,7 @@
 | Agent | `rule`, `flat`, `risk-only` (deterministic baselines); `qwen2.5:3b` and `llama3.1:8b` through Ollama |
 | Prompt profile (models only) | `full` (explicit gate policy and flag definitions), `compact` (one-paragraph instruction) |
 | Repeats | 3 per model and prompt, seeds 20261113, 20261114, 20261115 |
-| Decoding | temperature 0, JSON output constrained by the schema in `agents.py` |
+| Decoding | temperature 0, JSON output constrained by the schema in `agents.py`, at most 384 output tokens |
 | Cases | all 96 |
 
 That is 1,152 model calls. No training or fine-tuning is involved.

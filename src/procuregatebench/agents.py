@@ -116,6 +116,9 @@ class RiskTriggeredBlockAgent:
         return result
 
 
+MAX_OUTPUT_TOKENS = 384  # a complete answer needs about 100; the cap stops runaway generations
+
+
 class OllamaAgent:
     """Optional local model adapter using Ollama's HTTP generate endpoint."""
     name = "ollama"
@@ -203,7 +206,8 @@ class OllamaAgent:
         request_body = {
             "model": self.model, "prompt": self._prompt(case),
             "stream": False, "format": OLLAMA_OUTPUT_SCHEMA,
-            "options": {"temperature": self.temperature, "seed": self.seed},
+            "options": {"temperature": self.temperature, "seed": self.seed,
+                        "num_predict": MAX_OUTPUT_TOKENS},
         }
         request = urllib.request.Request(
             self.base_url + "/api/generate",
