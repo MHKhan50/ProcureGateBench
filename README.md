@@ -1,5 +1,7 @@
 # ProcureGateBench
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24223130.svg)](https://doi.org/10.5281/zenodo.24223130)
+
 *Process-gate compliance and red-flag calibration for agentic public-procurement triage*
 
 A procurement officer checks a bid in a fixed order: are the documents complete, is the bidder eligible, is there an unresolved conflict of interest, does the bid meet the technical requirements, and only then the price. Separately, some facts are warning signs rather than rules: only one bid came in, the tender window was short, the same supplier keeps winning, the specification names a brand. These signs can have innocent explanations and are meant to trigger a closer human look, not a verdict.
