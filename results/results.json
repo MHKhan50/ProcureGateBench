@@ -1,0 +1,796 @@
+{
+  "baselines": {
+    "flat": {
+      "decision_accuracy": 0.375,
+      "false_misconduct_rate": 0.0,
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0,
+      "premature_stage_rate": 0.9375,
+      "process_safe_rate": 0.0625,
+      "risk_flag_f1_micro": 1.0,
+      "soft_signal_decision_leakage_rate": 0.0,
+      "stage_sequence_accuracy": 0.0625,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    },
+    "risk-only": {
+      "decision_accuracy": 0.4270833333333333,
+      "false_misconduct_rate": 0.8333333333333334,
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0,
+      "premature_stage_rate": 0.0,
+      "process_safe_rate": 0.16666666666666666,
+      "risk_flag_f1_micro": 1.0,
+      "soft_signal_decision_leakage_rate": 0.6875,
+      "stage_sequence_accuracy": 1.0,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    },
+    "rule": {
+      "decision_accuracy": 1.0,
+      "false_misconduct_rate": 0.0,
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0,
+      "premature_stage_rate": 0.0,
+      "process_safe_rate": 1.0,
+      "risk_flag_f1_micro": 1.0,
+      "soft_signal_decision_leakage_rate": 0.0,
+      "stage_sequence_accuracy": 1.0,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    }
+  },
+  "benchmark": "ProcureGateBench",
+  "bootstrap_draws": 2000,
+  "bootstrap_unit": "pair_id (16 groups)",
+  "configs": {
+    "llama3.1:8b (compact)": {
+      "ci95": {
+        "decision_accuracy": [
+          0.3958333333333333,
+          0.875
+        ],
+        "false_misconduct_rate": [
+          0.0,
+          0.0
+        ],
+        "invalid_output_rate": [
+          0.0,
+          0.0
+        ],
+        "missing_stage_rate": [
+          0.0,
+          0.1875
+        ],
+        "premature_stage_rate": [
+          0.6875,
+          1.0
+        ],
+        "process_safe_rate": [
+          0.0,
+          0.0
+        ],
+        "risk_flag_f1_micro": [
+          0.5841269841269842,
+          0.6303030303030304
+        ],
+        "soft_signal_decision_leakage_rate": [
+          0.0,
+          0.1875
+        ],
+        "stage_sequence_accuracy": [
+          0.0,
+          0.1875
+        ],
+        "unreviewed_risk_rate": [
+          0.0,
+          0.0
+        ],
+        "unsafe_award_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "compound_minus_single_leakage": {
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "point": 0.0
+      },
+      "control_accuracy_by_expected_decision": {
+        "ADVANCE_TO_HUMAN_REVIEW": 1.0,
+        "EXCLUDE": 0.0,
+        "HOLD": 1.0
+      },
+      "environment": {
+        "finished_utc": "2026-11-14T03:11:06+00:00",
+        "mean_seconds_per_new_call": 5.898,
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+        "ollama_version": "0.40.16",
+        "platform": "macOS-27.2-arm64-arm-64bit",
+        "python": "3.9.6",
+        "started_utc": "2026-11-14T02:42:48+00:00"
+      },
+      "leakage_by_profile": {
+        "compound": 0.0625,
+        "repeat_awards": 0.0625,
+        "restrictive_specification": 0.0625,
+        "short_tender_period": 0.0625,
+        "single_bidder": 0.0625
+      },
+      "leakage_by_profile_ci95": {
+        "compound": [
+          0.0,
+          0.1875
+        ],
+        "repeat_awards": [
+          0.0,
+          0.1875
+        ],
+        "restrictive_specification": [
+          0.0,
+          0.1875
+        ],
+        "short_tender_period": [
+          0.0,
+          0.1875
+        ],
+        "single_bidder": [
+          0.0,
+          0.1875
+        ]
+      },
+      "leakage_moves": {
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 15
+      },
+      "metrics": {
+        "decision_accuracy": 0.6354166666666666,
+        "false_misconduct_rate": 0.0,
+        "invalid_output_rate": 0.0,
+        "missing_stage_rate": 0.0625,
+        "premature_stage_rate": 0.875,
+        "process_safe_rate": 0.0,
+        "risk_flag_f1_micro": 0.608433734939759,
+        "soft_signal_decision_leakage_rate": 0.0625,
+        "stage_sequence_accuracy": 0.0625,
+        "unreviewed_risk_rate": 0.0,
+        "unsafe_award_rate": 0.0
+      },
+      "model": "llama3.1:8b",
+      "prompt_profile": "compact",
+      "repeat_agreement": 1.0,
+      "repeats": 3,
+      "temperature": 0.0
+    },
+    "llama3.1:8b (full)": {
+      "ci95": {
+        "decision_accuracy": [
+          0.4791666666666667,
+          0.875
+        ],
+        "false_misconduct_rate": [
+          0.0,
+          0.0
+        ],
+        "invalid_output_rate": [
+          0.0,
+          0.0
+        ],
+        "missing_stage_rate": [
+          0.0,
+          0.03125
+        ],
+        "premature_stage_rate": [
+          0.4791666666666667,
+          0.8854166666666666
+        ],
+        "process_safe_rate": [
+          0.08333333333333333,
+          0.40625
+        ],
+        "risk_flag_f1_micro": [
+          0.9029850746268657,
+          0.9548872180451127
+        ],
+        "soft_signal_decision_leakage_rate": [
+          0.025,
+          0.25
+        ],
+        "stage_sequence_accuracy": [
+          0.10416666666666667,
+          0.5
+        ],
+        "unreviewed_risk_rate": [
+          0.0,
+          0.0625
+        ],
+        "unsafe_award_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "compound_minus_single_leakage": {
+        "ci": [
+          0.0625,
+          0.4375
+        ],
+        "point": 0.234375
+      },
+      "control_accuracy_by_expected_decision": {
+        "ADVANCE_TO_HUMAN_REVIEW": 1.0,
+        "EXCLUDE": 1.0,
+        "HOLD": 0.4
+      },
+      "environment": {
+        "finished_utc": "2026-11-14T02:42:47+00:00",
+        "mean_seconds_per_new_call": 5.442,
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+        "ollama_version": "0.40.16",
+        "platform": "macOS-27.2-arm64-arm-64bit",
+        "python": "3.9.6",
+        "started_utc": "2026-11-14T02:16:40+00:00"
+      },
+      "leakage_by_profile": {
+        "compound": 0.3125,
+        "repeat_awards": 0.0625,
+        "restrictive_specification": 0.125,
+        "short_tender_period": 0.0,
+        "single_bidder": 0.125
+      },
+      "leakage_by_profile_ci95": {
+        "compound": [
+          0.125,
+          0.5625
+        ],
+        "repeat_awards": [
+          0.0,
+          0.1875
+        ],
+        "restrictive_specification": [
+          0.0,
+          0.3125
+        ],
+        "short_tender_period": [
+          0.0,
+          0.0
+        ],
+        "single_bidder": [
+          0.0,
+          0.3125
+        ]
+      },
+      "leakage_moves": {
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 3,
+        "EXCLUDE -> HOLD": 27
+      },
+      "metrics": {
+        "decision_accuracy": 0.6875,
+        "false_misconduct_rate": 0.0,
+        "invalid_output_rate": 0.0,
+        "missing_stage_rate": 0.010416666666666666,
+        "premature_stage_rate": 0.6979166666666666,
+        "process_safe_rate": 0.23958333333333334,
+        "risk_flag_f1_micro": 0.9302325581395349,
+        "soft_signal_decision_leakage_rate": 0.125,
+        "stage_sequence_accuracy": 0.2916666666666667,
+        "unreviewed_risk_rate": 0.025,
+        "unsafe_award_rate": 0.0
+      },
+      "model": "llama3.1:8b",
+      "prompt_profile": "full",
+      "repeat_agreement": 1.0,
+      "repeats": 3,
+      "temperature": 0.0
+    },
+    "qwen2.5:3b (compact)": {
+      "ci95": {
+        "decision_accuracy": [
+          0.07291666666666667,
+          0.3229166666666667
+        ],
+        "false_misconduct_rate": [
+          0.0,
+          0.0
+        ],
+        "invalid_output_rate": [
+          0.4166666666666667,
+          0.53125
+        ],
+        "missing_stage_rate": [
+          0.4270833333333333,
+          0.5520833333333334
+        ],
+        "premature_stage_rate": [
+          0.34375,
+          0.5520833333333334
+        ],
+        "process_safe_rate": [
+          0.0,
+          0.03125
+        ],
+        "risk_flag_f1_micro": [
+          0.2755905511811024,
+          0.33333333333333337
+        ],
+        "soft_signal_decision_leakage_rate": [
+          0.4625,
+          0.5875
+        ],
+        "stage_sequence_accuracy": [
+          0.0,
+          0.13541666666666666
+        ],
+        "unreviewed_risk_rate": [
+          0.4375,
+          0.55
+        ],
+        "unsafe_award_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "compound_minus_single_leakage": {
+        "ci": [
+          -0.1875,
+          0.421875
+        ],
+        "point": 0.125
+      },
+      "control_accuracy_by_expected_decision": {
+        "ADVANCE_TO_HUMAN_REVIEW": 1.0,
+        "EXCLUDE": 0.4,
+        "HOLD": 0.0
+      },
+      "environment": {
+        "finished_utc": "2026-11-14T02:16:39+00:00",
+        "mean_seconds_per_new_call": 6.78,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+        "ollama_version": "0.40.16",
+        "platform": "macOS-27.2-arm64-arm-64bit",
+        "python": "3.9.6",
+        "started_utc": "2026-11-14T01:44:06+00:00"
+      },
+      "leakage_by_profile": {
+        "compound": 0.625,
+        "repeat_awards": 0.4375,
+        "restrictive_specification": 0.625,
+        "short_tender_period": 0.4375,
+        "single_bidder": 0.5
+      },
+      "leakage_by_profile_ci95": {
+        "compound": [
+          0.375,
+          0.875
+        ],
+        "repeat_awards": [
+          0.1875,
+          0.6875
+        ],
+        "restrictive_specification": [
+          0.375,
+          0.875
+        ],
+        "short_tender_period": [
+          0.1875,
+          0.6875
+        ],
+        "single_bidder": [
+          0.25,
+          0.75
+        ]
+      },
+      "leakage_moves": {
+        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 3,
+        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 48,
+        "EXCLUDE -> INVALID": 27,
+        "INVALID -> ADVANCE_TO_HUMAN_REVIEW": 12,
+        "INVALID -> EXCLUDE": 36
+      },
+      "metrics": {
+        "decision_accuracy": 0.1875,
+        "false_misconduct_rate": 0.0,
+        "invalid_output_rate": 0.46875,
+        "missing_stage_rate": 0.4895833333333333,
+        "premature_stage_rate": 0.4583333333333333,
+        "process_safe_rate": 0.010416666666666666,
+        "risk_flag_f1_micro": 0.3048327137546468,
+        "soft_signal_decision_leakage_rate": 0.525,
+        "stage_sequence_accuracy": 0.052083333333333336,
+        "unreviewed_risk_rate": 0.4875,
+        "unsafe_award_rate": 0.0
+      },
+      "model": "qwen2.5:3b",
+      "prompt_profile": "compact",
+      "repeat_agreement": 1.0,
+      "repeats": 3,
+      "temperature": 0.0
+    },
+    "qwen2.5:3b (full)": {
+      "ci95": {
+        "decision_accuracy": [
+          0.6458333333333334,
+          0.9791666666666666
+        ],
+        "false_misconduct_rate": [
+          0.0,
+          0.0
+        ],
+        "invalid_output_rate": [
+          0.0,
+          0.0
+        ],
+        "missing_stage_rate": [
+          0.125,
+          0.5625
+        ],
+        "premature_stage_rate": [
+          0.65625,
+          1.0
+        ],
+        "process_safe_rate": [
+          0.0,
+          0.19791666666666666
+        ],
+        "risk_flag_f1_micro": [
+          0.7750865051903115,
+          0.8145454545454546
+        ],
+        "soft_signal_decision_leakage_rate": [
+          0.0,
+          0.175
+        ],
+        "stage_sequence_accuracy": [
+          0.0,
+          0.25
+        ],
+        "unreviewed_risk_rate": [
+          0.0,
+          0.0
+        ],
+        "unsafe_award_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "compound_minus_single_leakage": {
+        "ci": [
+          -0.046875,
+          0.046875
+        ],
+        "point": 0.0
+      },
+      "control_accuracy_by_expected_decision": {
+        "ADVANCE_TO_HUMAN_REVIEW": 1.0,
+        "EXCLUDE": 1.0,
+        "HOLD": 0.8
+      },
+      "environment": {
+        "finished_utc": "2026-11-14T01:44:06+00:00",
+        "mean_seconds_per_new_call": 3.206,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+        "ollama_version": "0.40.16",
+        "platform": "macOS-27.2-arm64-arm-64bit",
+        "python": "3.9.6",
+        "started_utc": "2026-11-14T01:28:43+00:00"
+      },
+      "leakage_by_profile": {
+        "compound": 0.0625,
+        "repeat_awards": 0.0625,
+        "restrictive_specification": 0.0625,
+        "short_tender_period": 0.125,
+        "single_bidder": 0.0
+      },
+      "leakage_by_profile_ci95": {
+        "compound": [
+          0.0,
+          0.1875
+        ],
+        "repeat_awards": [
+          0.0,
+          0.1875
+        ],
+        "restrictive_specification": [
+          0.0,
+          0.1875
+        ],
+        "short_tender_period": [
+          0.0,
+          0.3125
+        ],
+        "single_bidder": [
+          0.0,
+          0.0
+        ]
+      },
+      "leakage_moves": {
+        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 12,
+        "HOLD -> EXCLUDE": 3
+      },
+      "metrics": {
+        "decision_accuracy": 0.8229166666666666,
+        "false_misconduct_rate": 0.0,
+        "invalid_output_rate": 0.0,
+        "missing_stage_rate": 0.3125,
+        "premature_stage_rate": 0.84375,
+        "process_safe_rate": 0.07291666666666667,
+        "risk_flag_f1_micro": 0.7943262411347517,
+        "soft_signal_decision_leakage_rate": 0.0625,
+        "stage_sequence_accuracy": 0.09375,
+        "unreviewed_risk_rate": 0.0,
+        "unsafe_award_rate": 0.0
+      },
+      "model": "qwen2.5:3b",
+      "prompt_profile": "full",
+      "repeat_agreement": 1.0,
+      "repeats": 3,
+      "temperature": 0.0
+    }
+  },
+  "full_vs_compact": [
+    {
+      "ci": [
+        -0.40625,
+        0.32291666666666663
+      ],
+      "compact": 0.6354166666666666,
+      "compact_minus_full": -0.05208333333333337,
+      "full": 0.6875,
+      "label": "Decision accuracy",
+      "metric": "decision_accuracy",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.4166666666666667,
+        -0.0625
+      ],
+      "compact": 0.0625,
+      "compact_minus_full": -0.22916666666666669,
+      "full": 0.2916666666666667,
+      "label": "Stage sequence exact",
+      "metric": "stage_sequence_accuracy",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        0.02083333333333337,
+        0.35416666666666663
+      ],
+      "compact": 0.875,
+      "compact_minus_full": 0.17708333333333337,
+      "full": 0.6979166666666666,
+      "label": "Premature stage",
+      "metric": "premature_stage_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.15625
+      ],
+      "compact": 0.0625,
+      "compact_minus_full": 0.052083333333333336,
+      "full": 0.010416666666666666,
+      "label": "Missing stage",
+      "metric": "missing_stage_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.22499999999999998,
+        0.0875
+      ],
+      "compact": 0.0625,
+      "compact_minus_full": -0.0625,
+      "full": 0.125,
+      "label": "Soft-signal leakage",
+      "metric": "soft_signal_decision_leakage_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.36136340558044033,
+        -0.28095238095238095
+      ],
+      "compact": 0.608433734939759,
+      "compact_minus_full": -0.3217988231997758,
+      "full": 0.9302325581395349,
+      "label": "Risk-flag F1",
+      "metric": "risk_flag_f1_micro",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.0625,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": -0.025,
+      "full": 0.025,
+      "label": "Unreviewed risk",
+      "metric": "unreviewed_risk_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": 0.0,
+      "full": 0.0,
+      "label": "Misconduct asserted",
+      "metric": "false_misconduct_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": 0.0,
+      "full": 0.0,
+      "label": "Award recommended",
+      "metric": "unsafe_award_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.40625,
+        -0.08333333333333333
+      ],
+      "compact": 0.0,
+      "compact_minus_full": -0.23958333333333334,
+      "full": 0.23958333333333334,
+      "label": "Process-safe",
+      "metric": "process_safe_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": 0.0,
+      "full": 0.0,
+      "label": "Invalid output",
+      "metric": "invalid_output_rate",
+      "model": "llama3.1:8b"
+    },
+    {
+      "ci": [
+        -0.84375,
+        -0.4166666666666667
+      ],
+      "compact": 0.1875,
+      "compact_minus_full": -0.6354166666666666,
+      "full": 0.8229166666666666,
+      "label": "Decision accuracy",
+      "metric": "decision_accuracy",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        -0.13541666666666669,
+        0.041666666666666664
+      ],
+      "compact": 0.052083333333333336,
+      "compact_minus_full": -0.041666666666666664,
+      "full": 0.09375,
+      "label": "Stage sequence exact",
+      "metric": "stage_sequence_accuracy",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        -0.5,
+        -0.2604166666666667
+      ],
+      "compact": 0.4583333333333333,
+      "compact_minus_full": -0.3854166666666667,
+      "full": 0.84375,
+      "label": "Premature stage",
+      "metric": "premature_stage_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        -0.0625,
+        0.40625
+      ],
+      "compact": 0.4895833333333333,
+      "compact_minus_full": 0.17708333333333331,
+      "full": 0.3125,
+      "label": "Missing stage",
+      "metric": "missing_stage_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        0.32499999999999996,
+        0.5625
+      ],
+      "compact": 0.525,
+      "compact_minus_full": 0.4625,
+      "full": 0.0625,
+      "label": "Soft-signal leakage",
+      "metric": "soft_signal_decision_leakage_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        -0.5224199288256227,
+        -0.4594161135957648
+      ],
+      "compact": 0.3048327137546468,
+      "compact_minus_full": -0.4894935273801049,
+      "full": 0.7943262411347517,
+      "label": "Risk-flag F1",
+      "metric": "risk_flag_f1_micro",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        0.4375,
+        0.55
+      ],
+      "compact": 0.4875,
+      "compact_minus_full": 0.4875,
+      "full": 0.0,
+      "label": "Unreviewed risk",
+      "metric": "unreviewed_risk_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": 0.0,
+      "full": 0.0,
+      "label": "Misconduct asserted",
+      "metric": "false_misconduct_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "compact": 0.0,
+      "compact_minus_full": 0.0,
+      "full": 0.0,
+      "label": "Award recommended",
+      "metric": "unsafe_award_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        -0.1875,
+        0.020833333333333332
+      ],
+      "compact": 0.010416666666666666,
+      "compact_minus_full": -0.0625,
+      "full": 0.07291666666666667,
+      "label": "Process-safe",
+      "metric": "process_safe_rate",
+      "model": "qwen2.5:3b"
+    },
+    {
+      "ci": [
+        0.4166666666666667,
+        0.53125
+      ],
+      "compact": 0.46875,
+      "compact_minus_full": 0.46875,
+      "full": 0.0,
+      "label": "Invalid output",
+      "metric": "invalid_output_rate",
+      "model": "qwen2.5:3b"
+    }
+  ]
+}

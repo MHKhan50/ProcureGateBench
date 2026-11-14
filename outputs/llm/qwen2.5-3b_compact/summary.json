@@ -1,0 +1,247 @@
+{
+  "agent": "ollama",
+  "aggregate_metrics": {
+    "decision_accuracy_mean": 0.1875,
+    "decision_accuracy_stdev": 0.0,
+    "duplicate_stage_rate_mean": 0.0,
+    "duplicate_stage_rate_stdev": 0.0,
+    "false_misconduct_rate_mean": 0.0,
+    "false_misconduct_rate_stdev": 0.0,
+    "invalid_output_rate_mean": 0.46875,
+    "invalid_output_rate_stdev": 0.0,
+    "missing_stage_rate_mean": 0.4895833333333333,
+    "missing_stage_rate_stdev": 0.0,
+    "n_cases_per_run": 96,
+    "n_runs": 3,
+    "premature_stage_rate_mean": 0.4583333333333333,
+    "premature_stage_rate_stdev": 0.0,
+    "process_safe_rate_mean": 0.010416666666666666,
+    "process_safe_rate_stdev": 0.0,
+    "risk_flag_f1_micro_mean": 0.3048327137546468,
+    "risk_flag_f1_micro_stdev": 0.0,
+    "risk_flag_precision_micro_mean": 0.2907801418439716,
+    "risk_flag_precision_micro_stdev": 0.0,
+    "risk_flag_recall_micro_mean": 0.3203125,
+    "risk_flag_recall_micro_stdev": 0.0,
+    "soft_signal_decision_leakage_rate_mean": 0.525,
+    "soft_signal_decision_leakage_rate_stdev": 0.0,
+    "soft_signal_pairs_compared_mean": 80.0,
+    "soft_signal_pairs_compared_stdev": 0.0,
+    "stage_order_violation_rate_mean": 0.0,
+    "stage_order_violation_rate_stdev": 0.0,
+    "stage_sequence_accuracy_mean": 0.052083333333333336,
+    "stage_sequence_accuracy_stdev": 0.0,
+    "unreviewed_risk_rate_mean": 0.4875,
+    "unreviewed_risk_rate_stdev": 0.0,
+    "unsafe_award_rate_mean": 0.0,
+    "unsafe_award_rate_stdev": 0.0
+  },
+  "benchmark": "ProcureGateBench",
+  "environment": {
+    "finished_utc": "2026-11-14T02:16:39+00:00",
+    "mean_seconds_per_new_call": 6.78,
+    "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "ollama_version": "0.40.16",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "started_utc": "2026-11-14T01:44:06+00:00"
+  },
+  "model": "qwen2.5:3b",
+  "prompt_profile": "compact",
+  "repeats": 3,
+  "run_metrics": [
+    {
+      "decision_accuracy": 0.1875,
+      "decision_accuracy_wilson_95": [
+        0.12202372252361303,
+        0.2770243696543969
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 4,
+        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 2,
+        "EXCLUDE -> ADVANCE_TO_HUMAN_REVIEW": 3,
+        "EXCLUDE -> EXCLUDE": 14,
+        "EXCLUDE -> INVALID": 13,
+        "HOLD -> ADVANCE_TO_HUMAN_REVIEW": 16,
+        "HOLD -> EXCLUDE": 14,
+        "HOLD -> INVALID": 30
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.46875,
+      "missing_stage_rate": 0.4895833333333333,
+      "n_cases": 96,
+      "premature_stage_rate": 0.4583333333333333,
+      "process_safe_rate": 0.010416666666666666,
+      "risk_flag_f1_micro": 0.3048327137546468,
+      "risk_flag_precision_micro": 0.2907801418439716,
+      "risk_flag_recall_micro": 0.3203125,
+      "soft_signal_decision_leakage_rate": 0.525,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 10,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 7,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 10,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 7,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 8,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.41695451180328746,
+        0.6307545013834838
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.052083333333333336,
+      "unreviewed_risk_rate": 0.4875,
+      "unsafe_award_rate": 0.0
+    },
+    {
+      "decision_accuracy": 0.1875,
+      "decision_accuracy_wilson_95": [
+        0.12202372252361303,
+        0.2770243696543969
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 4,
+        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 2,
+        "EXCLUDE -> ADVANCE_TO_HUMAN_REVIEW": 3,
+        "EXCLUDE -> EXCLUDE": 14,
+        "EXCLUDE -> INVALID": 13,
+        "HOLD -> ADVANCE_TO_HUMAN_REVIEW": 16,
+        "HOLD -> EXCLUDE": 14,
+        "HOLD -> INVALID": 30
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.46875,
+      "missing_stage_rate": 0.4895833333333333,
+      "n_cases": 96,
+      "premature_stage_rate": 0.4583333333333333,
+      "process_safe_rate": 0.010416666666666666,
+      "risk_flag_f1_micro": 0.3048327137546468,
+      "risk_flag_precision_micro": 0.2907801418439716,
+      "risk_flag_recall_micro": 0.3203125,
+      "soft_signal_decision_leakage_rate": 0.525,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 10,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 7,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 10,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 7,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 8,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.41695451180328746,
+        0.6307545013834838
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.052083333333333336,
+      "unreviewed_risk_rate": 0.4875,
+      "unsafe_award_rate": 0.0
+    },
+    {
+      "decision_accuracy": 0.1875,
+      "decision_accuracy_wilson_95": [
+        0.12202372252361303,
+        0.2770243696543969
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 4,
+        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 2,
+        "EXCLUDE -> ADVANCE_TO_HUMAN_REVIEW": 3,
+        "EXCLUDE -> EXCLUDE": 14,
+        "EXCLUDE -> INVALID": 13,
+        "HOLD -> ADVANCE_TO_HUMAN_REVIEW": 16,
+        "HOLD -> EXCLUDE": 14,
+        "HOLD -> INVALID": 30
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.46875,
+      "missing_stage_rate": 0.4895833333333333,
+      "n_cases": 96,
+      "premature_stage_rate": 0.4583333333333333,
+      "process_safe_rate": 0.010416666666666666,
+      "risk_flag_f1_micro": 0.3048327137546468,
+      "risk_flag_precision_micro": 0.2907801418439716,
+      "risk_flag_recall_micro": 0.3203125,
+      "soft_signal_decision_leakage_rate": 0.525,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 10,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 7,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 10,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 7,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 8,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.41695451180328746,
+        0.6307545013834838
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.052083333333333336,
+      "unreviewed_risk_rate": 0.4875,
+      "unsafe_award_rate": 0.0
+    }
+  ],
+  "seed": 20261113,
+  "selected_cases": 96,
+  "temperature": 0.0,
+  "version": "0.1.0"
+}

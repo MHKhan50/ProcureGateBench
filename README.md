@@ -86,6 +86,35 @@ PYTHONPATH=src python3 scripts/generate_dataset.py
 
 Case inputs (`data/scenarios.jsonl`) and reference labels (`data/labels.jsonl`) are separate files. The model only ever sees the case inputs.
 
+## Results
+
+Two local models through Ollama 0.40.16 on an Apple-silicon Mac, temperature 0, three repeats each (the repeats were identical). Brackets are 95% cluster-bootstrap intervals over the 16 hard-gate groups; with only 16 groups they are wide. Full tables: [`results/tables.md`](results/tables.md).
+
+| Metric (%) | llama3.1:8b full | llama3.1:8b compact | qwen2.5:3b full | qwen2.5:3b compact |
+|---|---|---|---|---|
+| Decision accuracy | 68.8 [47.9, 87.5] | 63.5 [39.6, 87.5] | 82.3 [64.6, 97.9] | 18.8 [7.3, 32.3] |
+| Stage sequence exact | 29.2 [10.4, 50.0] | 6.2 [0.0, 18.8] | 9.4 [0.0, 25.0] | 5.2 [0.0, 13.5] |
+| Checked a stage after a failed gate | 69.8 [47.9, 88.5] | 87.5 [68.8, 100.0] | 84.4 [65.6, 100.0] | 45.8 [34.4, 55.2] |
+| Skipped a required stage | 1.0 [0.0, 3.1] | 6.2 [0.0, 18.8] | 31.2 [12.5, 56.2] | 49.0 [42.7, 55.2] |
+| Soft-signal leakage | 12.5 [2.5, 25.0] | 6.2 [0.0, 18.8] | 6.2 [0.0, 17.5] | 52.5 [46.2, 58.8]* |
+| Risk-flag F1 | 93.0 [90.3, 95.5] | 60.8 [58.4, 63.0] | 79.4 [77.5, 81.5] | 30.5 [27.6, 33.3] |
+| Misconduct asserted | 0.0 | 0.0 | 0.0 | 0.0 |
+| Award recommended | 0.0 | 0.0 | 0.0 | 0.0 |
+| Process-safe (everything right) | 24.0 [8.3, 40.6] | 0.0 | 7.3 [0.0, 19.8] | 1.0 [0.0, 3.1] |
+| Invalid output | 0.0 | 0.0 | 0.0 | 46.9 [41.7, 53.1] |
+
+\* For qwen2.5:3b with the compact prompt almost all of this is invalid output: of 240 risk-versus-control comparisons, only 3 were a change between two valid decisions.
+
+**What this shows**
+
+- **No model accused anyone or awarded a contract.** Misconduct and award rates were 0% in every configuration, against 83% misconduct for the deliberately unsafe `risk-only` baseline.
+- **The order of the checks was the weak point.** Even with the full prompt, the models listed stages after the gate that should have stopped the review in 70% (llama3.1:8b) and 84% (qwen2.5:3b) of cases. Only 24% (llama3.1:8b) and 7% (qwen2.5:3b) of cases were right on every count.
+- **H1, soft-signal leakage, was small but present with the full prompt:** 12.5% [2.5, 25.0] for llama3.1:8b and 6.2% [0.0, 17.5] for qwen2.5:3b. The direction differed by model. llama3.1:8b mostly moved cases that should be excluded to `HOLD` (27 of 30 changes); qwen2.5:3b moved cases that should advance to `EXCLUDE` (12 of 15).
+- **H2, the compact prompt, hurt both models in different ways.** qwen2.5:3b lost its output format: 46.9% of replies could not be read, and decision accuracy fell from 82.3% to 18.8%. llama3.1:8b kept a similar decision accuracy but lost risk flags (F1 93.0% to 60.8%) and never chose `EXCLUDE` on the no-indicator controls that required it.
+- **H3, four indicators at once, mattered only for llama3.1:8b with the full prompt:** leakage was 31.2% for the compound profile against 0% to 12.5% for single indicators (difference 23.4 points [6.2, 43.8]).
+
+These are two small models under one harness on synthetic cases; they say nothing about larger or hosted models.
+
 ## Limits
 
 - All cases are synthetic and the policy is fictional; nothing here describes real tenders, suppliers or officials.

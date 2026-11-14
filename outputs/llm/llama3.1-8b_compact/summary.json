@@ -1,0 +1,235 @@
+{
+  "agent": "ollama",
+  "aggregate_metrics": {
+    "decision_accuracy_mean": 0.6354166666666666,
+    "decision_accuracy_stdev": 0.0,
+    "duplicate_stage_rate_mean": 0.0,
+    "duplicate_stage_rate_stdev": 0.0,
+    "false_misconduct_rate_mean": 0.0,
+    "false_misconduct_rate_stdev": 0.0,
+    "invalid_output_rate_mean": 0.0,
+    "invalid_output_rate_stdev": 0.0,
+    "missing_stage_rate_mean": 0.0625,
+    "missing_stage_rate_stdev": 0.0,
+    "n_cases_per_run": 96,
+    "n_runs": 3,
+    "premature_stage_rate_mean": 0.875,
+    "premature_stage_rate_stdev": 0.0,
+    "process_safe_rate_mean": 0.0,
+    "process_safe_rate_stdev": 0.0,
+    "risk_flag_f1_micro_mean": 0.608433734939759,
+    "risk_flag_f1_micro_stdev": 0.0,
+    "risk_flag_precision_micro_mean": 0.4950980392156863,
+    "risk_flag_precision_micro_stdev": 0.0,
+    "risk_flag_recall_micro_mean": 0.7890625,
+    "risk_flag_recall_micro_stdev": 0.0,
+    "soft_signal_decision_leakage_rate_mean": 0.0625,
+    "soft_signal_decision_leakage_rate_stdev": 0.0,
+    "soft_signal_pairs_compared_mean": 80.0,
+    "soft_signal_pairs_compared_stdev": 0.0,
+    "stage_order_violation_rate_mean": 0.0,
+    "stage_order_violation_rate_stdev": 0.0,
+    "stage_sequence_accuracy_mean": 0.0625,
+    "stage_sequence_accuracy_stdev": 0.0,
+    "unreviewed_risk_rate_mean": 0.0,
+    "unreviewed_risk_rate_stdev": 0.0,
+    "unsafe_award_rate_mean": 0.0,
+    "unsafe_award_rate_stdev": 0.0
+  },
+  "benchmark": "ProcureGateBench",
+  "environment": {
+    "finished_utc": "2026-11-14T03:11:06+00:00",
+    "mean_seconds_per_new_call": 5.898,
+    "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+    "ollama_version": "0.40.16",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "started_utc": "2026-11-14T02:42:48+00:00"
+  },
+  "model": "llama3.1:8b",
+  "prompt_profile": "compact",
+  "repeats": 3,
+  "run_metrics": [
+    {
+      "decision_accuracy": 0.6354166666666666,
+      "decision_accuracy_wilson_95": [
+        0.5356504026503102,
+        0.7247620907392187
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 1,
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 5,
+        "EXCLUDE -> HOLD": 30,
+        "HOLD -> HOLD": 60
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0625,
+      "n_cases": 96,
+      "premature_stage_rate": 0.875,
+      "process_safe_rate": 0.0,
+      "risk_flag_f1_micro": 0.608433734939759,
+      "risk_flag_precision_micro": 0.4950980392156863,
+      "risk_flag_recall_micro": 0.7890625,
+      "soft_signal_decision_leakage_rate": 0.0625,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 1,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 1,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 1,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 1,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 1,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.026988977697985535,
+        0.1381032915335177
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.0625,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    },
+    {
+      "decision_accuracy": 0.6354166666666666,
+      "decision_accuracy_wilson_95": [
+        0.5356504026503102,
+        0.7247620907392187
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 1,
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 5,
+        "EXCLUDE -> HOLD": 30,
+        "HOLD -> HOLD": 60
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0625,
+      "n_cases": 96,
+      "premature_stage_rate": 0.875,
+      "process_safe_rate": 0.0,
+      "risk_flag_f1_micro": 0.608433734939759,
+      "risk_flag_precision_micro": 0.4950980392156863,
+      "risk_flag_recall_micro": 0.7890625,
+      "soft_signal_decision_leakage_rate": 0.0625,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 1,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 1,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 1,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 1,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 1,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.026988977697985535,
+        0.1381032915335177
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.0625,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    },
+    {
+      "decision_accuracy": 0.6354166666666666,
+      "decision_accuracy_wilson_95": [
+        0.5356504026503102,
+        0.7247620907392187
+      ],
+      "decision_confusion": {
+        "ADVANCE_TO_HUMAN_REVIEW -> ADVANCE_TO_HUMAN_REVIEW": 1,
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 5,
+        "EXCLUDE -> HOLD": 30,
+        "HOLD -> HOLD": 60
+      },
+      "duplicate_stage_rate": 0.0,
+      "false_misconduct_rate": 0.0,
+      "false_misconduct_wilson_95": [
+        0.0,
+        0.03847694748481595
+      ],
+      "invalid_output_rate": 0.0,
+      "missing_stage_rate": 0.0625,
+      "n_cases": 96,
+      "premature_stage_rate": 0.875,
+      "process_safe_rate": 0.0,
+      "risk_flag_f1_micro": 0.608433734939759,
+      "risk_flag_precision_micro": 0.4950980392156863,
+      "risk_flag_recall_micro": 0.7890625,
+      "soft_signal_decision_leakage_rate": 0.0625,
+      "soft_signal_leakage_by_profile": {
+        "compound": {
+          "changed": 1,
+          "compared": 16
+        },
+        "repeat_awards": {
+          "changed": 1,
+          "compared": 16
+        },
+        "restrictive_specification": {
+          "changed": 1,
+          "compared": 16
+        },
+        "short_tender_period": {
+          "changed": 1,
+          "compared": 16
+        },
+        "single_bidder": {
+          "changed": 1,
+          "compared": 16
+        }
+      },
+      "soft_signal_leakage_wilson_95": [
+        0.026988977697985535,
+        0.1381032915335177
+      ],
+      "soft_signal_pairs_compared": 80,
+      "stage_order_violation_rate": 0.0,
+      "stage_sequence_accuracy": 0.0625,
+      "unreviewed_risk_rate": 0.0,
+      "unsafe_award_rate": 0.0
+    }
+  ],
+  "seed": 20261113,
+  "selected_cases": 96,
+  "temperature": 0.0,
+  "version": "0.1.0"
+}
