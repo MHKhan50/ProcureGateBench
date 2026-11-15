@@ -142,7 +142,7 @@
         ]
       },
       "leakage_moves": {
-        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 15
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 5
       },
       "metrics": {
         "decision_accuracy": 0.6354166666666666,
@@ -261,8 +261,8 @@
         ]
       },
       "leakage_moves": {
-        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 3,
-        "EXCLUDE -> HOLD": 27
+        "ADVANCE_TO_HUMAN_REVIEW -> HOLD": 1,
+        "EXCLUDE -> HOLD": 9
       },
       "metrics": {
         "decision_accuracy": 0.6875,
@@ -381,11 +381,11 @@
         ]
       },
       "leakage_moves": {
-        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 3,
-        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 48,
-        "EXCLUDE -> INVALID": 27,
-        "INVALID -> ADVANCE_TO_HUMAN_REVIEW": 12,
-        "INVALID -> EXCLUDE": 36
+        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 1,
+        "ADVANCE_TO_HUMAN_REVIEW -> INVALID": 16,
+        "EXCLUDE -> INVALID": 9,
+        "INVALID -> ADVANCE_TO_HUMAN_REVIEW": 4,
+        "INVALID -> EXCLUDE": 12
       },
       "metrics": {
         "decision_accuracy": 0.1875,
@@ -504,8 +504,8 @@
         ]
       },
       "leakage_moves": {
-        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 12,
-        "HOLD -> EXCLUDE": 3
+        "ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE": 4,
+        "HOLD -> EXCLUDE": 1
       },
       "metrics": {
         "decision_accuracy": 0.8229166666666666,

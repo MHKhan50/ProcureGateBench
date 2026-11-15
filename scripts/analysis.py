@@ -162,7 +162,9 @@ def leakage_moves(runs):
         for r in records:
             if r["label"]["risk_profile"] != "none" and r["prediction"]["decision"] != base[r["case"]["pair_id"]]:
                 moves["{0} -> {1}".format(base[r["case"]["pair_id"]], r["prediction"]["decision"])] += 1
-    return dict(moves.most_common())
+    # Mean number of cases per repeat, so that repeats are not counted more than once.
+    n = len(runs)
+    return {k: (v // n if v % n == 0 else round(v / n, 2)) for k, v in moves.most_common()}
 
 
 def control_accuracy(runs):
@@ -363,7 +365,7 @@ def main(argv=None):
     lines += ["", "Compound minus mean of single-indicator leakage (H3): " + "; ".join(
         "{0}: {1}".format(n, fmt_ci(h3[n]["point"], h3[n]["ci"])) for n in order), ""]
 
-    lines += ["## Where leaked decisions went", ""]
+    lines += ["## Where leaked decisions went", "", "Cases per repeat (all repeats were identical).", ""]
     for n in order:
         moves = results["configs"][n]["leakage_moves"]
         lines.append("- **{0}:** {1}".format(n, ", ".join("{0} ({1})".format(k, v) for k, v in moves.items()) or "none"))

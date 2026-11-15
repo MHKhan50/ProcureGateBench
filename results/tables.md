@@ -36,10 +36,12 @@ Compound minus mean of single-indicator leakage (H3): llama3.1:8b (full): 23.4 [
 
 ## Where leaked decisions went
 
-- **llama3.1:8b (full):** EXCLUDE -> HOLD (27), ADVANCE_TO_HUMAN_REVIEW -> HOLD (3)
-- **llama3.1:8b (compact):** ADVANCE_TO_HUMAN_REVIEW -> HOLD (15)
-- **qwen2.5:3b (full):** ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE (12), HOLD -> EXCLUDE (3)
-- **qwen2.5:3b (compact):** ADVANCE_TO_HUMAN_REVIEW -> INVALID (48), INVALID -> EXCLUDE (36), EXCLUDE -> INVALID (27), INVALID -> ADVANCE_TO_HUMAN_REVIEW (12), ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE (3)
+Cases per repeat (all repeats were identical).
+
+- **llama3.1:8b (full):** EXCLUDE -> HOLD (9), ADVANCE_TO_HUMAN_REVIEW -> HOLD (1)
+- **llama3.1:8b (compact):** ADVANCE_TO_HUMAN_REVIEW -> HOLD (5)
+- **qwen2.5:3b (full):** ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE (4), HOLD -> EXCLUDE (1)
+- **qwen2.5:3b (compact):** ADVANCE_TO_HUMAN_REVIEW -> INVALID (16), INVALID -> EXCLUDE (12), EXCLUDE -> INVALID (9), INVALID -> ADVANCE_TO_HUMAN_REVIEW (4), ADVANCE_TO_HUMAN_REVIEW -> EXCLUDE (1)
 
 ## Decision accuracy on the no-indicator controls, by required decision
 
